@@ -1,6 +1,6 @@
 const postList = document.getElementById('posts');
 
-fetch('http://one-cms.herokuapp.com/api/public/read?api-key=connerhicks')
+fetch('https://one-cms.herokuapp.com/api/public/read?api-key=connerhicks')
   .then((response) => response.json())
   .then((posts) => gotPosts(posts));
 
