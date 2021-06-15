@@ -8,7 +8,11 @@ const gotPosts = async (posts) => {
   posts.forEach((post, i) => {
     let date = new Date(post.createdAt);
     let time = date.toLocaleTimeString();
-    postList.innerHTML += `<li>${post.title}(${time}): ${post.body}</li>`;
+    postList.innerHTML += `
+    <h1>${post.title}</h1>
+    <h3>(${time})</h3>
+    <p>${post.body}</p>
+    `;
 
     if (i === posts.length) {
       insertNow(postInsert);
