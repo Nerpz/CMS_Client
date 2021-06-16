@@ -7,10 +7,10 @@ fetch('https://one-cms.herokuapp.com/api/public/read?api-key=connerhicks')
 const gotPosts = async (posts) => {
   posts.forEach((post, i) => {
     let date = new Date(post.createdAt);
-    let time = date.toLocaleTimeString();
+    // let time = date.toLocaleTimeString();
     postList.innerHTML += `
     <h1>${post.title}</h1>
-    <h3>(${time})</h3>
+    
     <p>${post.body}</p>
     `;
 
