@@ -9,9 +9,11 @@ const gotPosts = async (posts) => {
     let date = new Date(post.createdAt);
     // let time = date.toLocaleTimeString();
     postList.innerHTML += `
-    <h1>${post.title}</h1>
+    <div class="post">
+    <div class="post-title"><h1>${post.title}</h1></div>
     
-    <p>${post.body}</p>
+    <div class="post-body">${post.body}</div>
+    </div>
     `;
 
     if (i === posts.length) {
