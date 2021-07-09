@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow: hidden;
+}
+.screen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
+}
+.screenEnter {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100;
+  transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
+}
+.screenExit {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: -100;
+  transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
+}
+.colorButton {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.screenLeave {
+  transform: translateZ(200%);
+}
