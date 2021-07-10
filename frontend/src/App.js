@@ -5,21 +5,37 @@ import Portfolio from './screens/Portfolio';
 import Blog from './screens/Blog';
 // import Home from './screens/Home';
 import Gallery from './screens/Gallery';
-
+import {useSelector} from 'react-redux'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 
 const ColorSelectionContainer = (props) => {
-  const {children} = props;
+  
+  const {children, book} = props;
+  const {activePage, oldPage} = book;
   const mainStyle = {
     height: '200px',
     width: '200px',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gridTemplateRows: '1fr 1fr',
+    position: 'absolute',
+    
+    
+    transition: 'all cubic-bezier(0.25, 0.46, 0.45, 0.94) 20s',
   }
-  return <main style={mainStyle}>
+  const exitStyle = {
+    height: '200px',
+    width: '200px',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+    position: 'absolute',
+    right: '100%',
+    transition: 'all cubic-bezier(0.25, 0.46, 0.45, 0.94) 5s',
+  }
+  return <main style={activePage === 0 ? mainStyle : exitStyle}>
     {children}
   </main>
 }
@@ -33,43 +49,27 @@ const ColorButton = (props) => {
 }
 function App() {
   const [mainColor, setMainColor] = useState('red')
-  const [activeScreen, setActiveScreen] = useState('')
+
+  const pages = useSelector((state) => state.pages)
+  const {book} = pages;
+  const {activePage, oldPage} = book;
+
 
   const screenStyle = {
     backgroundColor: `${mainColor}`
   }
-  const activeScreenStyle={
-    transition: 'ease-in 5s'
-  }
-  const inactiveScreenStyle={
-    position: 'relative',
-    right: '200%',
-    transition: 'ease-in 5s'
-  }
-  const screenFunction = () => {
-    setActiveScreen()
-  }
+  
+  
   return (
     <Router>
       <Nav mainColor={mainColor} />
-      {activeScreen === '' && (
-      <div style={screenStyle} className="screen">
-        <Portfolio />
-        </div>
-        )
-      }
-      
-
-
-        
-      {/* 
         <div style={screenStyle} className='screen'>
         <Switch>
         <Route path='/portfolio'>
-          <Portfolio style={activeScreen === 'portfolio' ? activeScreenStyle : inactiveScreenStyle}/>
+          <Portfolio />
         </Route>
         <Route path='/about'>
-          <About style={activeScreen === 'about' ? activeScreenStyle : inactiveScreenStyle}/>
+          <About />
         </Route>
         <Route path='/gallery'>
           <Gallery />
@@ -79,7 +79,9 @@ function App() {
         </Route>
         
         <Route path='/'>
-          <ColorSelectionContainer>
+          <h1>{`ActivePage:${activePage} / oldPage: ${oldPage}`}</h1>
+
+          <ColorSelectionContainer book={book}>
             <ColorButton color={'#053'} onClick={()=>setMainColor('#053')}/>
             <ColorButton color={'#08f'} onClick={()=>setMainColor('#08f')}/>
             <ColorButton color={'yellow'} onClick={()=>setMainColor('yellow')}/>
@@ -88,7 +90,7 @@ function App() {
         </Route>
       </Switch> 
       </div>
-      */}
+     
       
     </Router>
   );

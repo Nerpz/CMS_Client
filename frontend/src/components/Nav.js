@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux'
+import {changePage} from '../actions/actions'
+
 
 const NavButton = (props) => {
   const {mainColor} = props;
@@ -235,9 +238,31 @@ const NavLink = (props) => {
     </Link>
   );
 };
+
 const Nav = (props) => {
+
   const {mainColor} = props;
+
   const [showNav, setShowNav] = useState(false);
+
+  const dispatch = useDispatch()
+
+  const pages = useSelector((state) => state.pages);
+  const {book} = pages;
+
+
+  const pageClicked = (pageNumber) => {
+    let newPage = pageNumber;
+    let oldPage;
+      if(book && book.activePage) {
+          oldPage = book.activePage
+      } else {
+         oldPage = 0;
+      }
+
+     dispatch(changePage(newPage, oldPage))  
+  }
+
 
   return (
     <>
@@ -251,6 +276,7 @@ const Nav = (props) => {
         >
           Portfolio
         </NavLink>
+        <button onClick={(e)=>{pageClicked(1)}}>Page 1</button>
         {/* <NavLink mainColor={mainColor}
           onClick={() => {
             setShowNav(false);
