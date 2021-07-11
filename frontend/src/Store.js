@@ -2,11 +2,12 @@ import {createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 
-import {changePageReducer} from './reducers/navReducers'
+import {changePageReducer, changeMainColorReducer} from './reducers'
 
 
 const reducer = combineReducers({
    pages: changePageReducer,
+   changeMainColor: changeMainColorReducer
 })
 
 const middleware = [thunk]

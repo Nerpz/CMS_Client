@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux'
-import {changePage} from '../actions/actions'
+import {changePage} from '../actions'
 
 
 const NavButton = (props) => {
@@ -180,9 +179,9 @@ const NavTitle = (props) => {
   };
   return (
     <h1 style={titleStyle}>
-      <Link onClick={onClick} to='/'><img style={imgStyle} src='/images/logo.png' alt='logo' />
+      <a onClick={onClick} ><img style={imgStyle} src='/images/logo.png' alt='logo' />
       
-      </Link>
+      </a>
     </h1>
   );
 };
@@ -223,7 +222,7 @@ const NavLink = (props) => {
     
   };
   return (
-    <Link
+    <a
       style={hover ? linkStyleHover : linkStyle}
       to={href}
       onMouseEnter={(e) => {
@@ -235,13 +234,13 @@ const NavLink = (props) => {
       onClick={onClick}
     >
       {children}
-    </Link>
+    </a>
   );
 };
 
 const Nav = (props) => {
 
-  const {mainColor} = props;
+  const {mainColor, activePage} = props;
 
   const [showNav, setShowNav] = useState(false);
 
@@ -252,15 +251,11 @@ const Nav = (props) => {
 
 
   const pageClicked = (pageNumber) => {
-    let newPage = pageNumber;
-    let oldPage;
-      if(book && book.activePage) {
-          oldPage = book.activePage
-      } else {
-         oldPage = 0;
-      }
-
-     dispatch(changePage(newPage, oldPage))  
+    const oldPage = activePage;
+    const newPage = pageNumber;  
+    if(newPage !== oldPage) {
+     return dispatch(changePage(newPage, oldPage))  
+    } else {return}
   }
 
 
@@ -271,39 +266,27 @@ const Nav = (props) => {
         <NavLink mainColor={mainColor}
           onClick={() => {
             setShowNav(false);
+            pageClicked(1)
           }}
           href={'/portfolio'}
         >
           Portfolio
         </NavLink>
-        <button onClick={(e)=>{pageClicked(1)}}>Page 1</button>
-        {/* <NavLink mainColor={mainColor}
-          onClick={() => {
-            setShowNav(false);
-          }}
-          href={'/about'}
-        >
-          About
-        </NavLink>
         <NavLink mainColor={mainColor}
           onClick={() => {
             setShowNav(false);
-          }}
-          href={'/gallery'}
-        >
-          Photos
-        </NavLink>
-        <NavLink mainColor={mainColor}
-          onClick={() => {
-            setShowNav(false);
+            pageClicked(2)
           }}
           href={'/blog'}
         >
           Blog
-        </NavLink> */}
+        </NavLink>
+        
+       
         
         <NavTitle mainColor={mainColor} onClick={() => {
             setShowNav(false);
+            pageClicked(0);
           }}></NavTitle>
       </NavMenu>
     </>

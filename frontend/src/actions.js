@@ -1,4 +1,4 @@
-import {CHANGE_PAGE} from '../constants/navConstants'
+import {CHANGE_PAGE} from './constants'
 
 export const changePage = (newPage, oldPage) => (dispatch) => {
 
