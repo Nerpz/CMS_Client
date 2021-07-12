@@ -9,4 +9,97 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 'ease-in 5s';
 }
+
+.activePage {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  animation-name: slidein;
+  animation-duration: .5s;
+  
+}
+.closePage {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  animation-name: slideout;
+  animation-duration: .5s;
+}
+.crossPageContainer {
+  
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  animation-name: slideacross;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 60s;
+}
+.crossPage{
+  position: fixed;
+  height: 100px;
+  top: 0;
+}
+/* The animation code */
+@keyframes slidein {
+  from {
+    transform: translateX(100%) ;
+
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideout {
+  from {
+    transform: translateX(0%);
+  }
+  
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideacross {
+  from {
+    transform: ;
+    
+  }
+ 
+  to {
+    transform:  translateY(80%) scale(4) rotate(5deg) ;
+    
+
+
+  }
+}
+/* @keyframes slideacross {
+  from {
+    transform: translateX(100%) translateY(100%) scale(1);
+    
+  }
+  50% {
+    transform: translateX(0%) translateY(60%) scale(3)
+  }
+  90% {
+    transform: translateX(0%) translateY(250%) scale(4.5)
+
+  }
+  to {
+    transform: translateX(0%) translateY(500%) scale(6)
+
+  }
+} */

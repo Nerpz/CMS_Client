@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {changePage} from '../actions'
-
+import ColorSelect from '../pages/ColorSelect'
 
 const NavButton = (props) => {
   const {mainColor} = props;
@@ -13,7 +13,7 @@ const NavButton = (props) => {
     width: '80px',
     position: 'fixed',
     bottom: '15px',
-    right: '15px',
+    right: '5px',
     padding: '0.5rem',
     borderRadius: '10px',
     border: '5px solid black',
@@ -23,7 +23,8 @@ const NavButton = (props) => {
     backgroundSize: '95%',
     backgroundPosition: '4px 4px',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-    
+    cursor: 'pointer',
+
   };
   const inactiveHoverStyle = {
     zIndex: '5',
@@ -42,7 +43,8 @@ const NavButton = (props) => {
     backgroundPosition: '4px 4px',
     transform: 'rotate(360deg)',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-   
+    cursor: 'pointer',
+
   };
 
   const activeButtonStyle = {
@@ -61,7 +63,8 @@ const NavButton = (props) => {
     backgroundSize: '75%',
     backgroundPosition: '8px 8px',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-    
+    cursor: 'pointer',
+
   };
   const activeHoverStyle = {
     zIndex: '5',
@@ -81,7 +84,8 @@ const NavButton = (props) => {
 
     transform: 'rotate(360deg)',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-    
+        cursor: 'pointer',
+
   };
   return (
     <button
@@ -169,6 +173,8 @@ const NavTitle = (props) => {
     justifyContent: 'flex-end',
     alignItems: 'center',
     justifySelf: 'stretch',
+    cursor: 'pointer',
+
   };
   const imgStyle = {
     height: 'auto',
@@ -203,7 +209,7 @@ const NavLink = (props) => {
     marginTop: '0.5rem',
     paddingBottom: '0.6rem',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-
+    cursor: 'pointer',
   };
   const linkStyleHover = {
     textDecoration: 'none',
@@ -219,7 +225,8 @@ const NavLink = (props) => {
     marginTop: '0.5rem',
     paddingBottom: '0.6rem',
     transition: 'cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s',
-    
+    cursor: 'pointer',
+
   };
   return (
     <a
@@ -277,9 +284,9 @@ const Nav = (props) => {
             setShowNav(false);
             pageClicked(2)
           }}
-          href={'/blog'}
+         href='/gallery'
         >
-          Blog
+          Gallery
         </NavLink>
         
        
@@ -288,6 +295,7 @@ const Nav = (props) => {
             setShowNav(false);
             pageClicked(0);
           }}></NavTitle>
+          
       </NavMenu>
     </>
   );

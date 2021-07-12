@@ -10,7 +10,7 @@ export const changePageReducer = (state={book: {activePage: 0, oldPage: .5}}, ac
    }
 }
 
-export const changeMainColorReducer = (state={mainColor: 'red'}, action) => {
+export const changeMainColorReducer = (state={mainColor: 'black'}, action) => {
    switch(action.type){
       case CHANGE_MAIN_COLOR:
             return {mainColor: action.payload};
