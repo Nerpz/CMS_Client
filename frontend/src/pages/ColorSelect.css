@@ -1,0 +1,40 @@
+.colorButton {
+   width: 100px;
+   height: 100px;
+   padding: 0;
+   margin: 0;
+   border-radius: 0;
+   border: none;
+   cursor: pointer;
+   
+ }
+
+.colorsContainer {
+height: 200px;
+width: 200px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+border-radius: 100px;
+
+}
+.colorButtonNav {
+  width: 100px;
+   height: 100px;
+   padding: 0;
+   margin: 0;
+   border-radius: 0;
+   border: none;
+   cursor: pointer;
+   
+  
+}
+.colorsContainerNav {
+  height: 200px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-radius: 100px;
+
+}

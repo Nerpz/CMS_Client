@@ -1,0 +1,2 @@
+export const CHANGE_MAIN_COLOR = 'CHANGE_MAIN_COLOR'
+export const CHANGE_PAGE = 'CHANGE_PAGE'
