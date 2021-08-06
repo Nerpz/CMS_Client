@@ -112,7 +112,7 @@ const NavMenu = (props) => {
   const { children, showNav, mainColor } = props;
   const activeNavStyle = {
     zIndex: '5',
-    height: '93%',
+    height: 'auto',
     width: '210px',
     
     position: 'fixed',
@@ -134,7 +134,7 @@ const NavMenu = (props) => {
     zIndex: '5',
     height: '93%',
     width: '200px',
-    backgroundColor: `${mainColor}`,
+    // backgroundColor: `${mainColor}`,
     position: 'fixed',
     right: '-220px',
     bottom: '15px',
