@@ -7,7 +7,7 @@ const Portfolio = (props) => {
  
    return (
       <main className='portfolioMain' >
-         <div className="portfolioTitle">
+         <div className="title">
             <h1>Portfolio</h1>
          </div>
 

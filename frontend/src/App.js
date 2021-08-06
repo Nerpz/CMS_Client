@@ -42,9 +42,9 @@ function App() {
             <Portfolio book={book} mainColor={mainColor}/>
           </div>}
         {activePage === 2 ? <div className={`activePage`}>
-            <Gallery book={book}/>
+            <Gallery book={book} mainColor={mainColor}/>
           </div> : oldPage === 2 && <div className={`closePage`}>
-            <Gallery book={book}/>
+            <Gallery book={book} mainColor={mainColor}/>
           </div>}
 
           <div className="crossPageContainer">
