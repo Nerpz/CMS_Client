@@ -6,7 +6,7 @@ const Portfolio = (props) => {
    const {activePage, oldPage} = book;
  
    return (
-      <main className='portfolioMain' >
+      <main className='main' >
          <div className="title">
             <h1>Portfolio</h1>
          </div>
