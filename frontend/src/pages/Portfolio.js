@@ -11,13 +11,7 @@ const Portfolio = (props) => {
             <h1>Portfolio</h1>
          </div>
 
-         <a href="https://nerpz.com" target="_blank" className="portfolioItem">
-            
-            <img src="/images/nerpzlogo.png" alt="" className='portfolioImg'/>
-            <h2 className='portfolioItemTitle'>Nerpz - Ecommerce</h2>
-            <p className='portfolioP'>Node and React powered ecommerce website.</p>
-            <a className='portfolioLink'href="https://nerpz.com" target="_blank">View</a>
-         </a>
+        
          <a href="https://nerpz.com" target="_blank" className="portfolioItem">
             
             <img src="/images/nerpzlogo.png" alt="" className='portfolioImg'/>
