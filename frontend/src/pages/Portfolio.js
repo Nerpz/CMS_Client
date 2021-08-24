@@ -28,14 +28,14 @@ const Portfolio = (props) => {
             <a className='portfolioLink'href="https://clever-elion-268a4a.netlify.app/" target="_blank">View</a>
          </a>
 
-         <a href="https://nertobin.com" target="_blank" className="portfolioItem lastItem">
+         <a href="https://nertobin.com" target="_blank" className="portfolioItem">
          <img src="/images/musicnote.png" alt="" className='portfolioImgTall'/>
             <h2 className='portfolioItemTitle'>Music Note Generator</h2>
             <p className='portfolioP'>React app for when a musician just can't decide.</p>
             <a className='portfolioLink'href="https://nertobin.com" target="_blank">View</a>
          </a>
-        
-
+         
+         <div className="blankSpace">blankspace</div>
 
       </main>
    )
