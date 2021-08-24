@@ -179,8 +179,8 @@ const NavTitle = (props) => {
   const imgStyle = {
     height: 'auto',
     width: '210px',
-    
-    
+    backgroundColor: `${mainColor}`,
+    borderRadius: '4rem',
     padding: '0rem',
   };
   return (
