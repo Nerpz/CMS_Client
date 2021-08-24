@@ -41,15 +41,14 @@ const Gallery = (props) => {
          <h1 className="title">Gallery</h1>
        
          <div className="gallery">
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Compass-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/9+Shapes-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Allatoona-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Bikeride-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Compass-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Mask-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Ribbons-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Tangled+Beads-01.png'/>
-            <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/Windows-01.png'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/SkateboardingEgg.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/Windows.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/LadyMaskGhanna.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/Squiggs.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/Allatoona.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/Diamonds.svg'/>
+            <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/Network.svg'/>
+            {/* <GalleryImage mainColor={mainColor} imgUrl='/images/gallery/'/> */}
             {/* <GalleryImage mainColor={mainColor} imgUrl='https://nerblog.s3.amazonaws.com/.png'/> */}
            
          </div>
