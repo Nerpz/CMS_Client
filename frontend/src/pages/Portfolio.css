@@ -50,12 +50,11 @@
    
    width: 340px;
    padding: 1rem;
-   color: black;
-  background-color: none;
    border-radius: 1rem;
   border: 3px solid black;
    float: right;
 }
+
 .portfolioItemTitle{
    font-size: 1.5rem;
    padding-left: 1rem;
